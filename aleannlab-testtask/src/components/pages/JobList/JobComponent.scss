@@ -1,0 +1,30 @@
+$articleColor: #FFFFFF;
+
+.jobComponent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $articleColor;
+    border-radius: 2%;
+    border: 1px solid white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 20px 10px;
+}
+.job__image{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+
+}
+.job__data{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    .job__title{
+        font-weight: 700;
+        color: black;
+    }
+    color: gray;
+}
