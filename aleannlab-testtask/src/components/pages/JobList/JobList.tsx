@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Job } from "../../../models/Job"
-import {JobComponent} from './JobComponent'
+import { Job } from '../../../models/Job'
+import { JobComponent } from './JobComponent'
 import './JobList.scss'
-
 
 export const JobList = () => {
   const [jobs, setJobs] = useState<Job[]>([])
@@ -11,37 +10,32 @@ export const JobList = () => {
   let data
   let res
   let requestURL = ''
-  let json = require('../../../models/data.json')
+  // const json = require('../../../models/data.json')
   useEffect(() => {
     const fetchData = async () => {
       requestURL = `${API}?access_token=${token}`
       res = await fetch(requestURL)
       data = await res.json()
-      console.log(requestURL)
       setJobs(data)
-
     }
-    //fetchData()
-    setJobs(json)
-    console.log(jobs)
-
+    fetchData()
+    // console.log(jobs)
+    // setJobs(json)
   }, [])
+
   // if (jobs === undefined || jobs.length >= 1){
   //   return(
   //     <div>Loading ...</div>
   //   )
   // }
 
-
   return (
-    <div className="content">
-      
-    
-    <div className="jobList">
+    <div className="jobListPage">
+      <div className="jobList">
         {jobs.map((job) => (
-        <JobComponent job={job}></JobComponent>
-      ))}
-</div>
+          <JobComponent key={job.id} job={job}></JobComponent>
+        ))}
+      </div>
     </div>
   )
 }

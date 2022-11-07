@@ -1,4 +1,11 @@
-.content {
-    display: flex;
-    justify-content: center;
+.jobListPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 960px;
+
+  .jobList {
+    width: 70%;
+    min-width: 840px;
+  }
 }

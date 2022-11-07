@@ -1,32 +1,40 @@
 import React from 'react'
-import {Job} from '../../../models/Job'
+import { Job } from 'models/Job'
 import './JobComponent.scss'
-import { Link } from "react-router-dom"
-
-
-type Props = {
+import { Link } from 'react-router-dom'
+import bookmarkImg from 'images/bookmark.png'
+interface Props {
   job: Job
 }
 
-export const JobComponent = ({job} : Props) => {
-  const date = new Date()
-  console.log(typeof date)
-  console.log(typeof job.createdAt)
+export const JobComponent = ({ job }: Props) => {
+  const currentDateTime = new Date()
+  const date = new Date(job.createdAt)
+  var diff = Math.abs(currentDateTime.getTime() - date.getTime())
+  var days = Math.floor(diff / (3600 * 24) / 1000)
+
   return (
-      <article className="jobComponent">
+    <article className="jobComponent">
+      <div className="job__uniqueData">
         <img className="job__image" src={job.pictures[0]} alt="ph"></img>
-        <div className="job__data">
-          <Link to={`/JobList/1`} state={{job : job}}>
-          <p className="job__title">{job.title}</p>
+        <div className="jobInfo">
+          <Link className="job__title" to={'/JobList/1'} state={{ job }}>
+            <p>{job.title}</p>
           </Link>
-          <br></br>
-          <span>Department Name * {job.name}</span>
-          <p>{job.address}</p>
+          <span className="job__department">Department Name * {job.name}</span>
+          <p className="job__address">{job.address}</p>
         </div>
-        <div>
-          <p>{job.createdAt.toString()}</p>
-        </div>
-      </article>
+      </div>
+      <div className="job__genericData">
+        <img src={bookmarkImg} className="bookmarkImg"></img>
+        <p>
+          {days < 365
+            ? `Posted ${days} days ago`
+            : days < 730
+            ? `Posted 1 year ago`
+            : `Posted ${Math.floor(days / 365)} years ago`}
+        </p>
+      </div>
+    </article>
   )
 }
-
