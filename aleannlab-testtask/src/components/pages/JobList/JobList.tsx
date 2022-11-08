@@ -5,29 +5,39 @@ import './JobList.scss'
 
 export const JobList = () => {
   const [jobs, setJobs] = useState<Job[]>([])
+  const [errorMessage, setErrorMessage] = useState<string | undefined>()
+
   const API = 'https://api.json-generator.com/templates/ZM1r0eic3XEy/data'
   const token = 'wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu'
-  let data
-  let res
-  let requestURL = ''
-  // const json = require('../../../models/data.json')
+
   useEffect(() => {
     const fetchData = async () => {
-      requestURL = `${API}?access_token=${token}`
-      res = await fetch(requestURL)
-      data = await res.json()
-      setJobs(data)
+      const requestURL = `${API}?access_token=${token}`
+      try {
+        const res = await fetch(requestURL)
+        const data: Job[] = await res.json()
+
+        if (!res.ok || !data) {
+          throw res.status
+        }
+        setJobs(data)
+      } catch (err) {
+        switch (err) {
+          case 401:
+            setErrorMessage('Invalid API Request Credentials')
+            break
+          case 429:
+            setErrorMessage('Server Overloaded')
+            break
+        }
+      }
     }
     fetchData()
-    // console.log(jobs)
-    // setJobs(json)
   }, [])
 
-  // if (jobs === undefined || jobs.length >= 1){
-  //   return(
-  //     <div>Loading ...</div>
-  //   )
-  // }
+  if (errorMessage != undefined) {
+    return <h1>{errorMessage}</h1>
+  }
 
   return (
     <div className="jobListPage">

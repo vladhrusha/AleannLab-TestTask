@@ -10,7 +10,20 @@
   color: #3a4562;
 
   .jobDetails {
-    width: 700px;
+    margin: 5%;
+
+    .jobDetails__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 5%;
+      .header__actions {
+        width: 35%;
+      }
+      .header__action:nth-of-type(2) {
+        margin-left: 10%;
+      }
+    }
     .heading {
       display: flex;
       justify-content: space-between;
@@ -21,6 +34,29 @@
         line-height: 125%;
         letter-spacing: -0.75px;
       }
+    }
+    .salary {
+      display: flex;
+      flex-direction: column;
+      .salary__p {
+        margin: 0;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        /* identical to box height, or 133% */
+
+        letter-spacing: -0.5625px;
+      }
+      .salary__p:first-of-type {
+        margin-top: 1.5em;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        /* identical to box height, or 125% */
+
+        letter-spacing: -0.625px;
+      }
+      padding-right: 5%3;
     }
     .jobDetails__postTime {
       font-family: 'Roboto';
@@ -58,11 +94,6 @@
   }
 }
 
-.jobDetails__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .sectionTitle {
   font-weight: 700;
   font-size: 28px;
@@ -75,16 +106,19 @@
   line-height: 125%;
   letter-spacing: -0.625px;
 }
-
+.additionalInfo {
+  padding-top: 5%;
+}
 .additionalInfo__title {
+  line-height: 133%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 133%;
-
   letter-spacing: -0.5625px;
-
   color: #3a4562;
   font-stretch: 100;
 }
@@ -101,6 +135,7 @@
   border: 1px solid rgba(85, 105, 158, 0.3);
   border-radius: 8px;
   margin-left: 1%;
+  margin-bottom: 1%;
 
   font-weight: 700;
   font-size: 16px;
@@ -133,15 +168,18 @@
   align-items: center;
   letter-spacing: -0.457143px;
   margin-left: 1%;
+  margin-bottom: 1%;
 }
 .attachedImages {
   display: flex;
+  padding-bottom: 5%;
 }
 .attachedImg {
   width: 209px;
   height: 115px;
-  border-radius: 8px;
-  margin-right: 1.5%;
+  border-radius: 10%;
+  padding-right: 1.5%;
+  padding-bottom: 1.5%;
 }
 .returnButton {
   width: 213px;
@@ -149,7 +187,9 @@
   background: rgba(56, 69, 100, 0.14);
   border-radius: 8px;
   border: none;
-
+  position: relative;
+  right: 14%;
+  margin-bottom: 10%;
   font-weight: 600;
   font-size: 12px;
   line-height: 133%;
@@ -157,10 +197,12 @@
   text-transform: uppercase;
   color: #3a4562;
 }
+.sectionTitle.cardTitle {
+  display: none;
+}
 .card {
   width: 402px;
   height: 436px;
-
   .card__info {
     display: flex;
     flex-direction: column;
@@ -171,17 +213,106 @@
     color: white;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    span {
-      position: relative;
-      left: 20%;
+    .card__span {
+      padding-left: 20%;
       margin-top: 2%;
     }
   }
   .card__map {
     width: 402px;
     height: 218px;
-    background-color: red;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+  }
+}
+.jobDetailsPage.mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 414px;
+
+  .jobDetails__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .applyBtn:nth-of-type(1) {
+    display: none;
+  }
+
+  .jobDetails {
+    .jobDetails__header {
+      .header__actions {
+        width: 100%;
+      }
+      .header__action:nth-of-type(2) {
+      }
+    }
+    .heading {
+      .title {
+      }
+    }
+    .jobDetails__postTime {
+    }
+    .description {
+    }
+    .article__p {
+    }
+  }
+  .applyBtn {
+    width: 127px;
+    font-size: 12px; //same as desktop apparently
+  }
+}
+.salary {
+}
+.salary__p:first-of-type {
+}
+.sectionTitle {
+}
+.pTitle {
+}
+.additionalInfo {
+}
+.additionalInfo__title {
+}
+.employmentTypes {
+  flex-wrap: wrap;
+}
+.employmentType {
+  width: 122px;
+}
+.benefits {
+  flex-wrap: wrap;
+}
+.benefit {
+  width: 122px;
+}
+.attachedImages {
+  flex-wrap: wrap;
+}
+.attachedImg {
+  width: 200px;
+  height: 116px;
+}
+.returnButton {
+  display: none;
+}
+.sectionTitle.cardTitle {
+  display: block;
+}
+.card {
+  width: 372px;
+  margin-left: 0;
+
+  .card__info {
+    width: 372px;
+
+    .card__span {
+    }
+  }
+  .card__map {
+    width: 372px;
   }
 }

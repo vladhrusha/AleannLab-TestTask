@@ -18,7 +18,7 @@ export const JobComponent = ({ job }: Props) => {
       <div className="job__uniqueData">
         <img className="job__image" src={job.pictures[0]} alt="ph"></img>
         <div className="jobInfo">
-          <Link className="job__title" to={'/JobList/1'} state={{ job }}>
+          <Link className="job__title" to={'/JobDetailed'} state={{ job }}>
             <p>{job.title}</p>
           </Link>
           <span className="job__department">Department Name * {job.name}</span>
