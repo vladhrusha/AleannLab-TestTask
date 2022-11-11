@@ -16,7 +16,9 @@ $articleColor: #ffffff;
   padding-right: 1%;
   padding-bottom: 1%;
 }
-
+.nav__genericData {
+  display: none;
+}
 .job__uniqueData {
   display: flex;
   align-items: center;
@@ -34,8 +36,14 @@ $articleColor: #ffffff;
     flex-direction: column;
     align-items: space-evenly;
     .job__title {
+      font-family: 'Proxima Nova';
+      font-style: normal;
       font-weight: 700;
-      color: black;
+      font-size: 20px;
+      line-height: 125%;
+
+      letter-spacing: -0.625px;
+      color: #3a4562;
     }
     .job__title:link {
       text-decoration: none;
@@ -48,6 +56,8 @@ $articleColor: #ffffff;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
+  color: gray;
+
   .bookmarkImg {
     width: 20px;
   }

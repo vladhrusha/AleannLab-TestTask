@@ -8,10 +8,8 @@
   font-family: 'Proxima Nova';
   font-style: normal;
   color: #3a4562;
-
+  padding: 5%;
   .jobDetails {
-    margin: 5%;
-
     .jobDetails__header {
       display: flex;
       justify-content: space-between;
@@ -56,7 +54,7 @@
 
         letter-spacing: -0.625px;
       }
-      padding-right: 5%3;
+      padding-right: 5%;
     }
     .jobDetails__postTime {
       font-family: 'Roboto';
@@ -124,6 +122,7 @@
 }
 .employmentTypes {
   display: flex;
+  flex-wrap: wrap;
 }
 .employmentType {
   box-sizing: border-box;
@@ -148,6 +147,7 @@
 }
 .benefits {
   display: flex;
+  flex-wrap: wrap;
 }
 .benefit {
   box-sizing: border-box;
@@ -173,6 +173,7 @@
 .attachedImages {
   display: flex;
   padding-bottom: 5%;
+  flex-wrap: wrap;
 }
 .attachedImg {
   width: 209px;
@@ -188,7 +189,6 @@
   border-radius: 8px;
   border: none;
   position: relative;
-  right: 14%;
   margin-bottom: 10%;
   font-weight: 600;
   font-size: 12px;
@@ -264,55 +264,55 @@
     width: 127px;
     font-size: 12px; //same as desktop apparently
   }
-}
-.salary {
-}
-.salary__p:first-of-type {
-}
-.sectionTitle {
-}
-.pTitle {
-}
-.additionalInfo {
-}
-.additionalInfo__title {
-}
-.employmentTypes {
-  flex-wrap: wrap;
-}
-.employmentType {
-  width: 122px;
-}
-.benefits {
-  flex-wrap: wrap;
-}
-.benefit {
-  width: 122px;
-}
-.attachedImages {
-  flex-wrap: wrap;
-}
-.attachedImg {
-  width: 200px;
-  height: 116px;
-}
-.returnButton {
-  display: none;
-}
-.sectionTitle.cardTitle {
-  display: block;
-}
-.card {
-  width: 372px;
-  margin-left: 0;
-
-  .card__info {
-    width: 372px;
-
-    .card__span {
-    }
+  .salary {
   }
-  .card__map {
+  .salary__p:first-of-type {
+  }
+  .sectionTitle {
+  }
+  .pTitle {
+  }
+  .additionalInfo {
+  }
+  .additionalInfo__title {
+  }
+  .employmentTypes {
+    flex-wrap: wrap;
+  }
+  .employmentType {
+    width: 122px;
+  }
+  .benefits {
+    flex-wrap: wrap;
+  }
+  .benefit {
+    width: 122px;
+  }
+  .attachedImages {
+    flex-wrap: wrap;
+  }
+  .attachedImg {
+    width: 200px;
+    height: 116px;
+  }
+  .returnButton {
+    display: none;
+  }
+  .sectionTitle.cardTitle {
+    display: block;
+  }
+  .card {
     width: 372px;
+    margin-left: 0;
+
+    .card__info {
+      width: 372px;
+
+      .card__span {
+      }
+    }
+    .card__map {
+      width: 372px;
+    }
   }
 }
