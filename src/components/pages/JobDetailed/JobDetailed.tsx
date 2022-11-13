@@ -147,7 +147,7 @@ export const JobDetailed = () => {
           ))}
         </div>
         <div>
-          <Link to="/AleannLab-TestTask">
+          <Link to="/AleannLab-TestTask/">
             <button className="returnButton">RETURN TO JOB BOARD</button>
           </Link>
         </div>

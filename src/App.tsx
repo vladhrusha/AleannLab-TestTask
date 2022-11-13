@@ -11,7 +11,7 @@ function App() {
       <div className="main">
         <Router>
           <Routes>
-            <Route path="/AleannLab-TestTask" element={<JobList />}></Route>
+            <Route path="/AleannLab-TestTask/" element={<JobList />}></Route>
             <Route path="/JobDetailed" element={<JobDetailed />}></Route>
           </Routes>
         </Router>
