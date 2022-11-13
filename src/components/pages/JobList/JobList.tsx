@@ -25,6 +25,7 @@ export const JobList = () => {
         if (!res.ok || !data) {
           throw res.status
         }
+        console.log(data)
         setJobs(data)
       } catch (err) {
         switch (err) {
@@ -65,7 +66,9 @@ export const JobList = () => {
       displayList.push(jobs[i])
     }
   }
-
+  if (displayList.length === 0) {
+    return <h1>Loading</h1>
+  }
   return (
     <div className={isMobile === true ? 'jobListPage mobile' : 'jobListPage'}>
       <div className="jobList">
