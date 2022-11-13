@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/AleannLab-TestTask/static/css/main.ccfa20a7.css",
-    "main.js": "/AleannLab-TestTask/static/js/main.7a989e83.js",
+    "main.js": "/AleannLab-TestTask/static/js/main.baef705f.js",
     "static/js/787.7cbf5ecc.chunk.js": "/AleannLab-TestTask/static/js/787.7cbf5ecc.chunk.js",
     "static/media/map.png": "/AleannLab-TestTask/static/media/map.05ab15ac4200a249f7c3.png",
     "index.html": "/AleannLab-TestTask/index.html",
     "main.ccfa20a7.css.map": "/AleannLab-TestTask/static/css/main.ccfa20a7.css.map",
-    "main.7a989e83.js.map": "/AleannLab-TestTask/static/js/main.7a989e83.js.map",
+    "main.baef705f.js.map": "/AleannLab-TestTask/static/js/main.baef705f.js.map",
     "787.7cbf5ecc.chunk.js.map": "/AleannLab-TestTask/static/js/787.7cbf5ecc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ccfa20a7.css",
-    "static/js/main.7a989e83.js"
+    "static/js/main.baef705f.js"
   ]
 }
